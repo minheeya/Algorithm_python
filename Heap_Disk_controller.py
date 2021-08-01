@@ -10,9 +10,12 @@ def solution(jobs):
     hq, sum_t = [], 0   #heap자료구조 , 소요시간 총 합
     while cmplete_N: #전체 반복문은 완료된 작업이 N개일때 종료 
         #현재 시점에서 처리 할 수 있는 작업들을 heap에 추가하는 과정
-        while jobs and jobs[-1][0] <= end:
-            rq_time, size = jobs.pop()  #요청시간, 소요시간
-            heapq.heappush(hq, (size, rq_time))
+        while jobs:
+            if jobs[-1][0] <= end:
+                rq_time, size = jobs.pop()  #요청시간, 소요시간
+                heapq.heappush(hq, (size, rq_time))
+            else:
+                break
         #heap에 담긴 작업 수행 => 가장 작은 소요시간을 가진 작업 먼저 수행
         if hq:
             size, rq_time = heapq.heappop(hq)  #소요시간, 요청시간
