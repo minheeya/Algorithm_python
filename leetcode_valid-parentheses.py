@@ -9,4 +9,5 @@ class Solution(object):
             #stack이 비어있거나 짝이 안맞을경우
             elif not stack or stack.pop() != table[c]:
                 return False
-        return len(stack) == 0  #input = '[' 인경우 예외처리
+        #input = '[' 인경우 예외처리
+        return len(stack) == 0  
