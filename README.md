@@ -1,2 +1,2 @@
-### Algorithm_problem
-- Solve algorithmic problems
+### Algorithm_python
+- Solve algorithmic problems using python
